@@ -1,0 +1,19 @@
+const path = require('path');
+const dotenv = require('dotenv');
+
+const env = process.env.NODE_ENV || 'development';
+dotenv.config({
+    path: `./env/${env}.env`,
+});
+
+let url = `postgres://${process.env.DB_USER}`;
+if (process.env.DB_PASS) {
+    url += `:${process.env.DB_PASS}:`;
+}
+url += `@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
+
+module.exports = {
+    'config':          path.resolve('util', 'sequelize-config.json'),
+    'migrations-path': path.resolve('migrations'),
+    url
+};

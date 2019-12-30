@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "72435f73-8aa7-45dc-85da-56e90a18c481",
+		"name": "LegendCity Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Least important task\",\n\t\"priority\": 100\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/1/task",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"1",
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get With Highest Priority",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/1/task",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"1",
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/1/task/:taskId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"1",
+								"task",
+								":taskId"
+							],
+							"variable": [
+								{
+									"key": "taskId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "02f73e7e-3752-4f06-90b5-40d666b1b823",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f068981f-2304-4e26-8c5a-58c301107a4a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "a0726123-6773-482a-b22a-a94e8aaf56f2",
+			"key": "BASE_URL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
